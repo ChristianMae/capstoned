@@ -1,0 +1,25 @@
+{% extends '../base.html' %}
+{% load staticfiles %}
+{% block title %} {{ learning.title }} {% endblock %}
+
+{% block content %}
+{% if error_messages %}
+<p> {{ error_messages }} </p>
+{% else %}
+<div class="edit-contribution-bg" class="">
+    <label for="original_content" class="original_text">Original</label>
+    <label for="contribution" class="translated_text">Translated</label>
+    <div class="row">
+        <textarea rows="20" cols="60" form="contribute_form" id="original_content" name="original_content" " readonly="readonly">{{ content }}</textarea>
+        <textarea rows="20" cols="60" form="contribute_form" id="contribution" name="contribution">{{ translated_content }}</textarea>
+        <form method='POST' action="{% url 'edit_learning' learning.id %}" id="contribute_form">
+            {% csrf_token %}
+            <input name="page_count" hidden="hidden" value="{{ page_count }}">
+            <input type="submit" name="SUBMIT" class ="btn btn-primary" readonly="readonly">
+        </form>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
+

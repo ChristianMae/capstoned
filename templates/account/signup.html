@@ -1,0 +1,28 @@
+{% extends '../base.html' %}
+{% block title %}Register{% endblock %}
+
+{% block content %}
+{% if error_messages %}
+<p>{{ error_messages }}</p>
+{% else %}
+<div class="register-bg">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="register-form-container">
+            <h1>Register</h1>
+            <form method="POST" id="signup_form" action="{% url 'register' %}" autocomplete="off">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+            <div class="warning-tac">
+                <h6>By clicking the submit button, you hereby agree to <a href="#"><strong>ATRAX Terms and Conditions.</strong></a></h6>
+            </div>
+            <div class="form-footer">
+                Already have an account? <a href="{% url 'index' %}"><strong>Sign in.</strong></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endif%}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends '../base.html' %}
+{% load staticfiles %}
+{% block title %} Contribute {% endblock %}
+
+{% block content %}
+
+{% if error_messages %}
+<p> {{ error_messages }} </p>
+<a href="{% url 'add_learning' %}"><button>Reload</button></a>
+{% else %}
+<div class="contribute-bg">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="contribute-form-container">
+            <h3>Contribute</h3>
+            <form  enctype="multipart/form-data" method="POST" action=".">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" id='submit_id' class="btn btn-primary">contribute</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
+

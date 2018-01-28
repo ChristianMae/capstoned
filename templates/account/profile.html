@@ -1,0 +1,85 @@
+{% extends '../base.html' %}
+{% load staticfiles %}
+{% block title %} {% if request.user.get_full_name %}{{ request.user.get_full_name }}{% else %}{{ request.user.email }}{% endif %} {% endblock %}
+
+{% block content %}
+
+{% if error_messages %}
+<p> {{ error_messages }} </p>
+<a href="{% url 'add_learning' %}"><button>Reload</button></a>
+{% else %}
+<div class="profile-bg">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="user-details">
+                <h3>{{ user.get_full_name }}</h3>
+                <h5>E-mail Address: <strong>{{ user.email }}</strong></h5>
+                <h5>School:<strong> {{ user.school }} </strong></h5>
+                <h5>Date Joined:<strong> {{ user.date_joined }} </strong></h5>
+                <a href="{% url 'index' %}"> 
+                    <button> Go back to Home</button>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-9 col-sm-6 col-xs-12"> 
+            <div class="my-material-container">
+                <form class="search-bar" method="post" action="." autocomplete="off">
+                    {% csrf_token %}
+                    <input type="text" class="form-control search" name="search_input" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </form>
+                <a class="btn-contribute" href="{% url 'add_learning' %}">
+                    <button> Contribute </button>
+                </a>
+                <div class="row page-design">
+                    {% if items.has_other_pages %}
+                    <ul class="pagination">
+                        {% if items.has_previous %}
+                        <li><a href="?page={{ items.previous_page_number }}">&laquo;</a></li>
+                        {% else %}
+                        <li class="disabled"><span>&laquo;</span></li>
+                        {% endif %}
+                        {% for i in items.paginator.page_range %}
+                        {% if items.number == i %}
+                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                        {% else %}
+                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+                        {% if items.has_next %}
+                        <li><a href="?page={{ items.next_page_number }}">&raquo;</a></li>
+                        {% else %}
+                        <li class="disabled"><span>&raquo;</span></li>
+                        {% endif %}
+                    </ul>
+                    {% endif %}
+                </div>
+                <div class="row">
+                    {% for material in items%}
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="material-cover">Title : <strong>{{ material.title }}</strong></div>
+                        <div class="details-container"> 
+                            <a class="btn-view" href="{% url 'contribution' material.id %}">
+                                <button>View</button>
+                            </a> 
+                            <h5> Author: <strong>{{ material.author }}</strong></h5>
+                            <h5> Category: <strong>{{ material.category }}</strong></h5>
+                            <h5> Uploader: <strong>{{ material.user.get_full_name }}</strong></h5>
+                            <h5> Date Uploaded: <strong>{{ material.date_uploaded }}</strong></h5>
+                            <h5> Tags:<strong>{% for tag in tags %}<button>{{ tag }}</button>{% endfor %}</strong></h5>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
+

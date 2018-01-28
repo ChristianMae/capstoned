@@ -1,0 +1,48 @@
+{% extends '../base.html' %}
+{% load staticfiles %}
+{% block title %} {{ learning_table.title }} {% endblock %}
+
+{% block content %}
+
+{% if error_messages %}
+<p> {{ error_messages }} </p>
+<a href="{% url 'add_learning' %}"><button>Reload</button></a>
+{% else %}
+<div class ="result-bg">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+
+            <div class="detail-btn">
+                <a href="{% url 'index' %}">
+                    <button>Back to Home</button>
+                </a>
+                <a href="{% url 'profile' request.user.id %}">
+                    <button>Back to Profile</button>
+                </a>
+            </div>
+            <div class="pdf-description">
+                <h2>Detials 
+                    <a href="{{ learning_table.translated_file.url }}" download="{{ learning_table.title }}.pdf"> 
+                        <button >Donwload PDF</button>
+                    </a>
+                </h2> 
+                <h5>Title: <strong>{{ learning_table.title }}</strong></h5>
+                <h5>Author: <strong>{{ learning_table.author }}</strong></h5>
+                <h5>Category: <strong>{{ learning_table.category }}</strong></h5>
+                <h5>Uploader: <strong>{{ learning_table.user.get_full_name }}</strong></h5>
+                <h5>Date Uploaded: <strong>{{ learning_table.date_uploaded }}</strong></h5>
+                <h5>Tags:<strong>{% for tag in tags %}<button>{{ tag }}</button>{% endfor %}</strong> </h5>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <iframe src="{{ learning_table.translated_file.url }}" width="650px" height="600px" class="result-pdf">
+                This browser does not support PDFs. Please download the PDF to view it: <a href="{{ learning_table.translated_file.url }}">Download PDF</a>
+            </iframe>
+        </div>
+    </div>
+    
+</div>
+{% endif %}
+
+{% endblock %}
+
