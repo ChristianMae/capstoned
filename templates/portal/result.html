@@ -21,12 +21,13 @@
                 </a>
             </div>
             <div class="pdf-description">
-                <h2>Detials 
+                <h2>Details 
                     <a href="{{ learning_table.translated_file.url }}" download="{{ learning_table.title }}.pdf"> 
                         <button >Donwload PDF</button>
                     </a>
                 </h2> 
-                <h5>Title: <strong>{{ learning_table.title }}</strong></h5>
+                <h5>Title: <strong>{{ learning_table.original_title }}</strong></h5>
+                <h5>Title: <strong>{{ learning_table.translated_title }}</strong></h5>
                 <h5>Author: <strong>{{ learning_table.author }}</strong></h5>
                 <h5>Category: <strong>{{ learning_table.category }}</strong></h5>
                 <h5>Uploader: <strong>{{ learning_table.user.get_full_name }}</strong></h5>

@@ -2,27 +2,65 @@
 {% block title %}Register{% endblock %}
 
 {% block content %}
-{% if error_messages %}
-<p>{{ error_messages }}</p>
-{% else %}
 <div class="register-bg">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="register-form-container">
-            <h1>Register</h1>
+            <h3>Register</h3>
+            {% if error_messages %}
+            <p>{{ error_messages }}</p>
+            {% endif%}
+            {{ form.non_field_errors }}
+            {{ form.first_name.errors }}
+            {{ form.last_name.errors }}
+            {{ form.email.errors }}
+            {{ form.school.errors }}
+            {{ form.password.errors }}
+            {{ form.confirm_password.errors }}
             <form method="POST" id="signup_form" action="{% url 'register' %}" autocomplete="off">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit" class="btn btn-primary">Register</button>
+                <div class="row">
+                    <div class="input-div">
+                        <label for="{{ form.first_name.id_for_label }}"> First Name: </label>
+                        {{ form.first_name }}
+                    </div>
+                    <div class="input-div">
+                        <label for="{{ form.last_name.id_for_label }}"> Last Name: </label>
+                        {{ form.last_name }}
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="input-div">
+                        <label for="{{ form.email.id_for_label }}"> Email: </label>
+                        {{ form.email }}
+                    </div>
+                    <div class="input-div">
+                        <label for="{{ form.school.id_for_label }}"> School: </label>
+                        {{ form.school }}
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="input-div">
+                        <label for="{{ form.password.id_for_label }}"> Password: </label>
+                        {{ form.password }}
+                    </div>
+                    <div class="input-div">
+                        <label for="{{ form.confirm_password.id_for_label }}"> Confirm Password: </label>
+                        {{ form.confirm_password }}
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="warning-tac">
+                        <h6>By registering, you hereby agree to <a href="{% url 'tac' %}"><strong>ATRAX Terms and Conditions.</strong></a></h6>
+                    </div>
+                    <div class="btn-reg">
+                        <button type="submit" class="btn btn-primary btn-register ">Register</button>
+                    </div>
+                </div>
             </form>
-            <div class="warning-tac">
-                <h6>By clicking the submit button, you hereby agree to <a href="#"><strong>ATRAX Terms and Conditions.</strong></a></h6>
-            </div>
             <div class="form-footer">
                 Already have an account? <a href="{% url 'index' %}"><strong>Sign in.</strong></a>
             </div>
         </div>
     </div>
 </div>
-
-{% endif%}
 {% endblock %}

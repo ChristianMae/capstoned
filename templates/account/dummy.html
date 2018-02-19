@@ -1,12 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
+    <style>
+        
+    </style>
 </head>
 <body>
-<h1>Hello, <strong>{{ full_name }}</strong></h1>
-<h4>You are receiving this e-mail because, you have given this e-mail address <strong>{{ email }}</strong>to connect to Atrax Web Portal.</h4>
-<h4>To confirm if this is correct, go to <a href="{{ url }}"><strong>pleaseclicklink</strong></a></h4>
-<h4>Thank you from <strong>atrax.com</strong></h4>
+    <div style="
+    width: 100%;
+    background-color: rgba(202,189,189,0.2)">
+        <div style=" 
+        text-align: center;  
+        margin:0;">
+        <h2 style="
+            margin: 0; 
+            text-align: center; 
+            padding: 20px;">
+            Hi, 
+            <strong>{{ full_name }}.</strong>
+        </h2>
+        <h4 style="
+        margin-top:0;
+        width: 70%;
+        margin: 0 auto; 
+        color: black;">
+        You have created a Atrax account.
+        <br />
+        Please click the confirm email address to verify your email address and complete your registration.
+        </h4>
+        <h4>
+            <a href="{{ url }}">
+                <button style="
+                width: 40%;
+                padding: 15px; 
+                border-radius: 90px; 
+                background-color: rgba(31,5,5,0.9); 
+                border:none;
+                box-shadow: 0 0 80px  rgba(202,189,189,0.7);
+                color: #fff;">
+                    <strong>Confirm Email Address</strong>
+                </button>
+            </a>
+        </h4> 
+        <h5 style="
+        width: 55%;
+        margin: 0  auto;">
+        or copy and paste this link into your browser:
+        <strong>{{ url }}</strong>
+        </h5>
+        <h6 style="width:30%;margin:  0 auto;"> Didn't create a Atrax account? It's likely someone just typed in your email address by accident. Feel free to ignore this email.
+        </h6>
+        </div>
+    </div>
 </body>
 </html>

@@ -11,7 +11,8 @@ class LearningMaterials(models.Model):
         ( grade_level, 'Grade Level'),
         ( kinder_level, 'Kind Level'),
     )
-    title = models.CharField(max_length = 250)
+    original_title = models.CharField(max_length = 250)
+    translated_title = models.CharField(max_length = 250)
     tags = models.CharField(max_length=300, null=True, blank=True)
     is_translated = models.BooleanField(default=False)
     source_language = models.CharField(max_length = 4, default='None')

@@ -7,5 +7,5 @@ class LearningMaterialsForm(forms.ModelForm):
     
     class Meta:
         model = LearningMaterials
-        fields = ['title','author', 'tags', 'category', 'original_file']
+        fields = ['original_title','translated_title','author', 'tags', 'category', 'original_file']
 

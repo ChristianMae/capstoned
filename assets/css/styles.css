@@ -41,244 +41,657 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
-@font-face {
-  family: 'OpenSans-Bold';
-  src: url(../fonts/OpenSans-Bold.ttf); }
-@font-face {
-  family: 'OpenSans-BoldItalic';
-  src: url(../fonts/OpenSans-BoldItalic.ttf); }
-@font-face {
-  family: 'OpenSans-ExtraBold';
-  src: url(../fonts/OpenSans-ExtraBold.ttf); }
-@font-face {
-  family: 'OpenSans-ExtraBoldItalic';
-  src: url(../fonts/OpenSans-ExtraBoldItalic.ttf); }
-@font-face {
-  family: 'OpenSans-Italic';
-  src: url(../fonts/OpenSans-Italic.ttf); }
-@font-face {
-  family: 'OpenSans-Light';
-  src: url(../fonts/OpenSans-Light.ttf); }
-@font-face {
-  family: 'OpenSans-LightItalic';
-  src: url(../fonts/OpenSans-LightItalic.ttf); }
-@font-face {
-  family: 'OpenSans-Regular';
-  src: url(../fonts/OpenSans-Regular.ttf); }
-@font-face {
-  family: 'OpenSans-Semibold';
-  src: url(../fonts/OpenSans-Semibold.ttf); }
-@font-face {
-  family: 'OpenSans-SemiboldItalic';
-  src: url(../fonts/OpenSans-SemiboldItalic.ttf); }
 body {
   background-color: #fff;
   height: 100%;
   margin: 0; }
-
-.login-form-container {
-  height: 400px;
-  width: 100%;
-  background-color: #f9f9f9;
-  padding: 20px 20px 50px;
-  margin-top: 120px;
-  background-color: rgba(41, 32, 16, 0.5);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.4); }
-  .login-form-container h3 {
-    margin-bottom: 20px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    font-family: "Montserrat-Regular";
-    letter-spacing: 2px;
-    text-transform: uppercase; }
-  .login-form-container input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    font-family: "Montserrat-Regular"; }
-    .login-form-container input:focus, .login-form-container input:active {
-      background-color: transparent;
-      outline: none;
-      border-bottom: solid 1px #e0e0e0 !important;
-      transition: 0.2s;
-      font-family: "Montserrat-Regular"; }
-      .login-form-container input:focus:focus, .login-form-container input:active:focus {
-        outline: none;
-        border-bottom: solid 1px #e0e0e0;
-        font-family: "Montserrat-Regular"; }
-      .login-form-container input:focus:active, .login-form-container input:active:active {
-        background-color: transparent; }
-  .login-form-container label {
-    margin-top: 15px;
-    font-family: "Montserrat-Regular";
-    letter-spacing: 1px; }
-  .login-form-container button {
-    background-color: transparent;
-    border: solid 1px #fff;
-    text-transform: uppercase;
-    float: right;
-    width: 40%;
-    margin: 30px 0 20px; }
-    .login-form-container button:focus, .login-form-container button:active, .login-form-container button:hover {
-      background: transparent;
-      outline: none;
-      border: solid 1px white;
-      background-color: #171209; }
-      .login-form-container button:focus:active, .login-form-container button:active:active, .login-form-container button:hover:active {
-        background: transparent;
-        outline: none;
-        border: solid 1px white;
-        background-color: #171209; }
-  .login-form-container .form-footer {
-    margin-top: 100px;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    font-family: "Montserrat-Regular";
-    letter-spacing: .5px;
-    padding-top: 10px;
-    font-weight: 500; }
-    .login-form-container .form-footer a {
-      color: #fff; }
-      .login-form-container .form-footer a:hover, .login-form-container .form-footer a:focus {
-        border: none;
-        outline: none;
-        text-decoration-line: none; }
 
 .landing-bg {
   border: none;
   border-radius: 0;
   /*    margin-top: 50px; */
   width: 100%;
-  height: 678px;
+  min-height: 100vh;
   background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(2, 2, 2, 0.5)), url(/static/images/landing-bg.jpg);
   background-position: center;
   background-size: cover; }
-
-.landing-atrax {
-  color: rgba(255, 255, 255, 0.8);
-  text-transform: uppercase;
-  font-family: "Montserrat-Regular";
-  letter-spacing: 5px;
-  margin-top: 180px;
-  font-size: 40px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4); }
-
-.btn-started {
-  margin-top: 100px;
-  padding: 10px;
-  background: #251d0f;
-  border: solid 1px rgba(255, 255, 255, 0.4);
-  border-radius: 50px;
-  color: rgba(255, 255, 255, 0.8);
-  font-family: "Montserrat-Regular";
-  letter-spacing: 2px;
-  font-size: 20px; }
-  .btn-started:focus {
-    outline: none; }
-
-.landing-tagline {
-  margin-top: 10px;
-  color: rgba(255, 255, 255, 0.5);
-  font-family: "Montserrat-Regular";
-  letter-spacing: 1px;
-  font-size: 20px; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .landing-bg {
+      min-height: 100vh; } }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .landing-bg {
+      min-height: 110vh; } }
+  .landing-bg .landing-atrax {
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    font-family: "Montserrat-Regular";
+    letter-spacing: 5px;
+    margin-top: 180px;
+    font-size: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4); }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .landing-bg .landing-atrax {
+        margin-top: 25px;
+        text-align: center;
+        font-size: 20px; } }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .landing-bg .landing-atrax {
+        margin-top: 30px;
+        text-align: center;
+        font-size: 30px; } }
+  .landing-bg .landing-tagline {
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "Montserrat-Regular";
+    letter-spacing: 1px;
+    font-size: 20px; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .landing-bg .landing-tagline {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 15px; } }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .landing-bg .landing-tagline {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 18px; } }
+  .landing-bg .btn-started {
+    margin-top: 100px;
+    padding: 10px;
+    background: #251d0f;
+    border: solid 1px rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: "Montserrat-Regular";
+    letter-spacing: 2px;
+    font-size: 20px; }
+    .landing-bg .btn-started:focus {
+      outline: none; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .landing-bg .btn-started {
+        font-size: 12px;
+        margin-top: 30px; } }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .landing-bg .btn-started {
+        font-size: 15px;
+        margin-top: 50px; } }
+  .landing-bg .login-form-container {
+    min-height: 400px;
+    width: 75%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 150px auto 0;
+    background-color: rgba(41, 32, 16, 0.5);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4); }
+    .landing-bg .login-form-container h3 {
+      padding-bottom: 5px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      font-family: "Montserrat-Regular";
+      letter-spacing: 2px;
+      text-transform: uppercase; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .landing-bg .login-form-container h3 {
+          font-size: 12px; } }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .landing-bg .login-form-container h3 {
+          font-size: 15px; } }
+    .landing-bg .login-form-container input {
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+      font-family: "Montserrat-Regular"; }
+      .landing-bg .login-form-container input:focus, .landing-bg .login-form-container input:active {
+        background-color: transparent;
+        outline: none;
+        border-bottom: solid 1px #e0e0e0 !important;
+        transition: 0.2s;
+        font-family: "Montserrat-Regular"; }
+        .landing-bg .login-form-container input:focus:focus, .landing-bg .login-form-container input:active:focus {
+          outline: none;
+          border-bottom: solid 1px #e0e0e0;
+          font-family: "Montserrat-Regular"; }
+        .landing-bg .login-form-container input:focus:active, .landing-bg .login-form-container input:active:active {
+          background-color: transparent; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .landing-bg .login-form-container input {
+          font-size: 12px; } }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .landing-bg .login-form-container input {
+          font-size: 12px; } }
+    .landing-bg .login-form-container label {
+      margin-top: 20px;
+      font-family: "Montserrat-Regular";
+      letter-spacing: 1px; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .landing-bg .login-form-container label {
+          font-size: 12px; } }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .landing-bg .login-form-container label {
+          font-size: 12px; } }
+    .landing-bg .login-form-container button {
+      background-color: transparent;
+      border: solid 1px #fff;
+      text-transform: uppercase;
+      float: right;
+      width: 35%;
+      margin: 30px 0 20px; }
+      .landing-bg .login-form-container button:focus, .landing-bg .login-form-container button:active, .landing-bg .login-form-container button:hover {
+        background: transparent;
+        outline: none;
+        border: solid 1px white;
+        background-color: #171209; }
+        .landing-bg .login-form-container button:focus:active, .landing-bg .login-form-container button:active:active, .landing-bg .login-form-container button:hover:active {
+          background: transparent;
+          outline: none;
+          border: solid 1px white;
+          background-color: #171209; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .landing-bg .login-form-container button {
+          font-size: 12px;
+          margin: 10px 0; } }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .landing-bg .login-form-container button {
+          font-size: 12px;
+          margin: 20px 10px 0 0;
+          width: 20%; } }
+    .landing-bg .login-form-container .form-footer {
+      margin-top: 100px;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-family: "Montserrat-Regular";
+      letter-spacing: .5px;
+      padding-top: 10px;
+      font-weight: 500; }
+      .landing-bg .login-form-container .form-footer a {
+        color: #fff; }
+        .landing-bg .login-form-container .form-footer a:hover, .landing-bg .login-form-container .form-footer a:focus {
+          border: none;
+          outline: none;
+          text-decoration-line: none; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .landing-bg .login-form-container .form-footer {
+          font-size: 12px;
+          margin-top: 70px; } }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .landing-bg .login-form-container .form-footer {
+          font-size: 12px; } }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .landing-bg .login-form-container {
+        margin-top: 40px;
+        min-height: 250px;
+        margin: 30px auto 0; } }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .landing-bg .login-form-container {
+        margin: 50px auto 0;
+        width: 80%;
+        padding: 20px 25px 0;
+        min-height: 370px; } }
 
 .register-bg {
   border: none;
   border-radius: 0;
   /*    margin-top: 50px; */
   width: 100%;
-  height: 890px;
+  min-height: 100vh;
   background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(2, 2, 2, 0.5)), url(/static/images/register-bg.jpg);
   background-position: center;
   background-size: cover; }
-
-.register-form-container {
-  background-color: #f9f9f9;
-  padding: 20px 20px 50px;
-  width: 450px;
-  height: 760px;
-  margin: 55px auto 20px;
-  background-color: rgba(41, 32, 16, 0.5);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.4); }
-  .register-form-container h1 {
-    margin-bottom: 20px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    font-family: "Montserrat-Regular";
-    letter-spacing: 2px;
-    text-transform: uppercase; }
-  .register-form-container input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    border-radius: 0;
-    font-family: "Montserrat-Regular"; }
-    .register-form-container input:focus, .register-form-container input:active {
-      background-color: transparent;
-      outline: none;
-      border-bottom: solid 1px #e0e0e0 !important;
-      transition: 0.2s;
-      font-family: "Montserrat-Regular"; }
-      .register-form-container input:focus:focus, .register-form-container input:active:focus {
-        outline: none;
-        border-bottom: solid 1px #e0e0e0;
-        font-family: "Montserrat-Regular"; }
-      .register-form-container input:focus:active, .register-form-container input:active:active {
-        outline: none;
-        background-color: transparent; }
-  .register-form-container label {
-    margin-top: 15px;
-    font-family: "Montserrat-Regular";
-    letter-spacing: 1px; }
-  .register-form-container button {
-    background-color: transparent;
-    border: solid 1px #fff;
-    text-transform: uppercase;
-    float: right;
-    width: 40%;
-    margin: 30px 0 20px; }
-    .register-form-container button:focus, .register-form-container button:active, .register-form-container button:hover {
-      background: transparent;
-      outline: none;
-      border: solid 1px white;
-      background-color: #171209; }
-      .register-form-container button:focus:active, .register-form-container button:active:active, .register-form-container button:hover:active {
-        background: transparent;
-        outline: none;
-        border: solid 1px white;
-        background-color: #171209; }
-        .register-form-container button:focus:active:focus, .register-form-container button:active:active:focus, .register-form-container button:hover:active:focus {
-          outline: none; }
-  .register-form-container .warning-tac {
-    margin-top: 42px;
-    font-family: "Montserrat-Regular"; }
-    .register-form-container .warning-tac a {
-      color: #fff; }
-      .register-form-container .warning-tac a:hover, .register-form-container .warning-tac a:focus {
-        text-decoration-line: none; }
-  .register-form-container .form-footer {
-    margin-top: 30px;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    font-family: "Montserrat-Regular";
-    letter-spacing: .5px;
-    padding-top: 10px;
-    font-weight: 500; }
-    .register-form-container .form-footer a {
-      color: #fff; }
-      .register-form-container .form-footer a:hover, .register-form-container .form-footer a:focus {
+  @media (min-width: 320px) and (max-width: 767px) {
+    .register-bg {
+      min-height: 130vh; } }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .register-bg {
+      min-height: 120vh; } }
+  .register-bg .register-form-container {
+    padding: 20px 20px 35px;
+    width: 80%;
+    margin: 70px auto 20px;
+    min-height: 50%;
+    background-color: rgba(41, 32, 16, 0.5);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4); }
+    .register-bg .register-form-container h3 {
+      margin-bottom: 20px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      font-family: "Montserrat-Regular";
+      letter-spacing: 2px;
+      text-transform: uppercase; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .register-bg .register-form-container h3 {
+          font-size: 15px; } }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .register-bg .register-form-container h3 {
+          font-size: 20px; } }
+    .register-bg .register-form-container .row .input-div {
+      display: inline-block;
+      width: 45%;
+      margin: 10px 0 0 28px; }
+      .register-bg .register-form-container .row .input-div input {
+        background-color: transparent;
         border: none;
-        outline: none;
-        text-decoration-line: none; }
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 0;
+        font-family: "Montserrat-Regular"; }
+        .register-bg .register-form-container .row .input-div input:focus, .register-bg .register-form-container .row .input-div input:active {
+          background-color: transparent;
+          outline: none;
+          border-bottom: solid 1px #e0e0e0 !important;
+          transition: 0.2s;
+          font-family: "Montserrat-Regular"; }
+          .register-bg .register-form-container .row .input-div input:focus:focus, .register-bg .register-form-container .row .input-div input:active:focus {
+            outline: none;
+            border-bottom: solid 1px #e0e0e0;
+            font-family: "Montserrat-Regular"; }
+          .register-bg .register-form-container .row .input-div input:focus:active, .register-bg .register-form-container .row .input-div input:active:active {
+            outline: none;
+            background-color: transparent; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .register-bg .register-form-container .row .input-div {
+          font-size: 12px;
+          width: 100%;
+          margin: 0; } }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .register-bg .register-form-container .row .input-div {
+          font-size: 13px;
+          width: 45%;
+          margin: 10px 0 0 20px; } }
+    .register-bg .register-form-container label {
+      margin-top: 15px;
+      font-family: "Montserrat-Regular";
+      letter-spacing: 1px; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .register-bg .register-form-container label {
+          font-size: 12px; } }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .register-bg .register-form-container label {
+          font-size: 13px; } }
+    .register-bg .register-form-container .btn-reg {
+      width: 100%;
+      height: 50%;
+      display: block; }
+      .register-bg .register-form-container .btn-reg button {
+        margin-right: 50px;
+        margin-bottom: 20px;
+        background-color: transparent;
+        border: solid 1px #fff;
+        text-transform: uppercase;
+        float: right;
+        width: 20%; }
+        .register-bg .register-form-container .btn-reg button:focus, .register-bg .register-form-container .btn-reg button:active, .register-bg .register-form-container .btn-reg button:hover {
+          background: transparent;
+          outline: none;
+          border: solid 1px white;
+          background-color: #171209; }
+          .register-bg .register-form-container .btn-reg button:focus:active, .register-bg .register-form-container .btn-reg button:active:active, .register-bg .register-form-container .btn-reg button:hover:active {
+            background: transparent;
+            outline: none;
+            border: solid 1px white;
+            background-color: #171209; }
+            .register-bg .register-form-container .btn-reg button:focus:active:focus, .register-bg .register-form-container .btn-reg button:active:active:focus, .register-bg .register-form-container .btn-reg button:hover:active:focus {
+              outline: none; }
+        @media (min-width: 320px) and (max-width: 767px) {
+          .register-bg .register-form-container .btn-reg button {
+            width: 100%;
+            float: none;
+            font-size: 13px;
+            letter-spacing: 3px; } }
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .register-bg .register-form-container .btn-reg button {
+            font-size: 12px;
+            width: 20%; } }
+    .register-bg .register-form-container .warning-tac {
+      margin-top: 10px;
+      display: inline-block;
+      width: 100%;
+      font-family: "Montserrat-Regular"; }
+      .register-bg .register-form-container .warning-tac h6 {
+        float: right;
+        margin-right: 50px; }
+        .register-bg .register-form-container .warning-tac h6 a {
+          color: #fff; }
+          .register-bg .register-form-container .warning-tac h6 a:hover, .register-bg .register-form-container .warning-tac h6 a:focus {
+            text-decoration-line: none; }
+        @media (min-width: 320px) and (max-width: 767px) {
+          .register-bg .register-form-container .warning-tac h6 {
+            width: 100%;
+            margin-right: 0; } }
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .register-bg .register-form-container .warning-tac h6 {
+            width: 70%;
+            margin-left: 50px;
+            margin-right: 20px; } }
+    .register-bg .register-form-container .form-footer {
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-family: "Montserrat-Regular";
+      letter-spacing: .5px;
+      padding-top: 10px;
+      font-weight: 500; }
+      .register-bg .register-form-container .form-footer a {
+        color: #fff; }
+        .register-bg .register-form-container .form-footer a:hover, .register-bg .register-form-container .form-footer a:focus {
+          border: none;
+          outline: none;
+          text-decoration-line: none; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .register-bg .register-form-container .form-footer {
+          font-size: 12px; } }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .register-bg .register-form-container .form-footer {
+          font-size: 13px; } }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .register-bg .register-form-container {
+        margin: 30px auto;
+        padding: 25px 20px; } }
+
+.terms-bg {
+  border: none;
+  border-radius: 0;
+  /*    margin-top: 50px; */
+  width: 100%;
+  min-height: 230vh;
+  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(2, 2, 2, 0.5)), url(/static/images/terms-bg.jpg);
+  background-position: center;
+  background-size: cover; }
+  .terms-bg .terms-container {
+    padding: 10px 15px 35px;
+    margin: 60px auto;
+    width: 80%;
+    min-height: 100%;
+    background-color: rgba(41, 32, 16, 0.5);
+    color: #fff;
+    line-height: 1.5;
+    border: 1px solid rgba(255, 255, 255, 0.4); }
+    .terms-bg .terms-container .eula-title {
+      font-family: "Montserrat-Regular";
+      letter-spacing: 3px;
+      font-size: 25px;
+      text-align: center; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .terms-bg .terms-container .eula-title {
+          font-size: 12px; } }
+    .terms-bg .terms-container .date-modified {
+      font-style: italic;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+      font-family: "Montserrat-Regular"; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .terms-bg .terms-container .date-modified {
+          font-size: 10px; } }
+    .terms-bg .terms-container .phrase-one {
+      margin-top: 10px;
+      width: 87%;
+      font-size: 15px;
+      margin: 0 auto;
+      text-align: center;
+      font-family: "Montserrat-Regular"; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .terms-bg .terms-container .phrase-one {
+          font-size: 12px; } }
+    .terms-bg .terms-container .phrase-two {
+      padding-top: 40px;
+      padding-bottom: 15px;
+      width: 90%;
+      font-size: 15px;
+      margin: 0 auto;
+      text-align: center;
+      font-family: "Montserrat-Regular"; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .terms-bg .terms-container .phrase-two {
+          font-size: 11px; } }
+    .terms-bg .terms-container .phrase {
+      padding-top: 20px;
+      width: 90%;
+      font-size: 15px;
+      margin: 0 auto;
+      line-height: 1.5;
+      font-family: "Montserrat-Regular"; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .terms-bg .terms-container .phrase {
+          font-size: 11px; } }
+    .terms-bg .terms-container .letters {
+      padding-top: 20px;
+      padding-left: 30px;
+      width: 90%;
+      font-size: 12px;
+      margin: 0 auto;
+      line-height: 1.5;
+      font-family: "Montserrat-Regular"; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .terms-bg .terms-container .letters {
+          font-size: 10.5px; } }
+    .terms-bg .terms-container .sub-letters {
+      padding-left: 50px;
+      width: 80%;
+      font-size: 10px;
+      margin: 0 auto;
+      line-height: 1.5;
+      font-family: "Montserrat-Regular"; }
+    .terms-bg .terms-container .description {
+      padding: 15px 25px 0; }
+    .terms-bg .terms-container .btn-eula {
+      margin: 10px 0;
+      background-color: rgba(41, 32, 16, 0.7);
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      float: right;
+      font-family: "Montserrat-Regular";
+      text-transform: uppercase;
+      margin: 10px 0;
+      background-color: rgba(41, 32, 16, 0.7);
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      float: right;
+      font-family: "Montserrat-Regular";
+      text-transform: uppercase; }
+      .terms-bg .terms-container .btn-eula a {
+        color: #fff; }
+        .terms-bg .terms-container .btn-eula a:hover, .terms-bg .terms-container .btn-eula a:focus {
+          background-color: rgba(41, 32, 16, 0.5);
+          border-top-left-radius: 25px;
+          border-bottom-left-radius: 25px;
+          outline: none;
+          border: 1px solid #eee; }
+          .terms-bg .terms-container .btn-eula a:hover:acitve, .terms-bg .terms-container .btn-eula a:focus:acitve {
+            background-color: rgba(41, 32, 16, 0.8);
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            outline: none;
+            border: 1px solid #eee; }
+      .terms-bg .terms-container .btn-eula:focus {
+        outline: none; }
+      .terms-bg .terms-container .btn-eula a[aria-expanded=true] {
+        color: #fff;
+        background: transparent;
+        border: transparent; }
+        .terms-bg .terms-container .btn-eula a[aria-expanded=true]:hover, .terms-bg .terms-container .btn-eula a[aria-expanded=true]:focus {
+          background-color: rgba(41, 32, 16, 0.5);
+          border-top-left-radius: 25px;
+          border-bottom-left-radius: 25px;
+          outline: none;
+          border: 1px solid #eee; }
+          .terms-bg .terms-container .btn-eula a[aria-expanded=true]:hover:acitve, .terms-bg .terms-container .btn-eula a[aria-expanded=true]:focus:acitve {
+            background-color: rgba(41, 32, 16, 0.8);
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            outline: none;
+            border: 1px solid #eee; }
+      .terms-bg .terms-container .btn-eula a[aria-expanded=false] {
+        color: #fff; }
+        .terms-bg .terms-container .btn-eula a[aria-expanded=false]:hover, .terms-bg .terms-container .btn-eula a[aria-expanded=false]:focus {
+          background-color: rgba(41, 32, 16, 0.5);
+          border-top-left-radius: 25px;
+          border-bottom-left-radius: 25px;
+          outline: none;
+          border: 1px solid #eee; }
+          .terms-bg .terms-container .btn-eula a[aria-expanded=false]:hover:acitve, .terms-bg .terms-container .btn-eula a[aria-expanded=false]:focus:acitve {
+            background-color: rgba(41, 32, 16, 0.8);
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            outline: none;
+            border: 1px solid #eee; }
+      .terms-bg .terms-container .btn-eula:focus {
+        outline: none; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .terms-bg .terms-container .btn-eula {
+          font-size: 11px; } }
+    .terms-bg .terms-container .btn-privacy {
+      margin: 10px 0;
+      background-color: rgba(41, 32, 16, 0.7);
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      float: right;
+      font-family: "Montserrat-Regular";
+      text-transform: uppercase;
+      margin: 10px 0;
+      background-color: rgba(41, 32, 16, 0.7);
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      float: right;
+      font-family: "Montserrat-Regular";
+      text-transform: uppercase; }
+      .terms-bg .terms-container .btn-privacy a {
+        color: #fff; }
+        .terms-bg .terms-container .btn-privacy a:hover, .terms-bg .terms-container .btn-privacy a:focus {
+          background-color: rgba(41, 32, 16, 0.5);
+          border-top-right-radius: 25px;
+          border-bottom-right-radius: 25px;
+          outline: none;
+          border: 1px solid #eee; }
+          .terms-bg .terms-container .btn-privacy a:hover:acitve, .terms-bg .terms-container .btn-privacy a:focus:acitve {
+            background-color: rgba(41, 32, 16, 0.8);
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+            outline: none;
+            border: 1px solid #eee; }
+      .terms-bg .terms-container .btn-privacy:focus {
+        outline: none; }
+      .terms-bg .terms-container .btn-privacy a[aria-expanded=true] {
+        color: #fff;
+        background: transparent;
+        border: transparent; }
+        .terms-bg .terms-container .btn-privacy a[aria-expanded=true]:hover, .terms-bg .terms-container .btn-privacy a[aria-expanded=true]:focus {
+          background-color: rgba(41, 32, 16, 0.5);
+          border-top-right-radius: 25px;
+          border-bottom-right-radius: 25px;
+          outline: none;
+          border: 1px solid #eee; }
+          .terms-bg .terms-container .btn-privacy a[aria-expanded=true]:hover:acitve, .terms-bg .terms-container .btn-privacy a[aria-expanded=true]:focus:acitve {
+            background-color: rgba(41, 32, 16, 0.8);
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+            outline: none;
+            border: 1px solid #eee; }
+      .terms-bg .terms-container .btn-privacy a[aria-expanded=false] {
+        color: #fff; }
+        .terms-bg .terms-container .btn-privacy a[aria-expanded=false]:hover, .terms-bg .terms-container .btn-privacy a[aria-expanded=false]:focus {
+          background-color: rgba(41, 32, 16, 0.5);
+          border-top-right-radius: 25px;
+          border-bottom-right-radius: 25px;
+          outline: none;
+          border: 1px solid #eee; }
+          .terms-bg .terms-container .btn-privacy a[aria-expanded=false]:hover:acitve, .terms-bg .terms-container .btn-privacy a[aria-expanded=false]:focus:acitve {
+            background-color: rgba(41, 32, 16, 0.8);
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+            outline: none;
+            border: 1px solid #eee; }
+      .terms-bg .terms-container .btn-privacy:focus {
+        outline: none; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .terms-bg .terms-container .btn-privacy {
+          font-size: 11px; } }
+    .terms-bg .terms-container .terms-button {
+      padding: 30px; }
+      .terms-bg .terms-container .terms-button .btn-group {
+        float: right; }
+        .terms-bg .terms-container .terms-button .btn-group a button {
+          padding: 8px;
+          border-radius: 10px;
+          font-family: "Montserrat-Regular";
+          font-size: 15px;
+          color: rgba(255, 255, 255, 0.6);
+          background-color: rgba(41, 32, 16, 0.8);
+          border: 1px solid rgba(41, 32, 16, 0.8); }
+@inlude mobile {
+  .terms-bg .terms-container .terms-button .btn-group a button {
+    float: left;
+    font-size: 8px; } }
+          .terms-bg .terms-container .terms-button .btn-group a button:focus {
+            outline: none; }
+        .terms-bg .terms-container .terms-button .btn-group a:active, .terms-bg .terms-container .terms-button .btn-group a:focus {
+          outline: none; }
+          .terms-bg .terms-container .terms-button .btn-group a:active:hover, .terms-bg .terms-container .terms-button .btn-group a:focus:hover {
+            borde-bottom: none; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .terms-bg {
+      min-height: 270vh; } }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .terms-bg {
+      min-height: 390vh; } }
+
+.verify-bg {
+  border: none;
+  border-radius: 0;
+  /*    margin-top: 50px; */
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(2, 2, 2, 0.5)), url(/static/images/verify-bg.jpg);
+  background-position: center;
+  background-size: cover; }
+  .verify-bg div {
+    margin-top: 280px;
+    background-color: rgba(41, 32, 16, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    height: 50%;
+    padding: 20px; }
+    .verify-bg div h1 {
+      text-align: center;
+      color: #fff;
+      font-family: "Montserrat-Regular";
+      letter-spacing: 3px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      padding-bottom: 10px; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .verify-bg div h1 {
+          font-size: 20px; } }
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .verify-bg div h1 {
+          font-size: 25px; } }
+    .verify-bg div h5 {
+      text-align: center;
+      color: #fff;
+      font-family: "Montserrat-Regular";
+      letter-spacing: 3px; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .verify-bg div h5 {
+          font-size: 12px; } }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .verify-bg div {
+        margin-top: 70%;
+        padding: 0 10px; } }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .verify-bg div {
+        margin-top: 30%; } }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .verify-bg {
+      min-heigt: 100vh; } }
 
 .home-bg {
   border: none;
@@ -302,6 +715,10 @@ body {
     margin-right: 20px;
     width: 300px;
     float: right; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .home-container .search-bar {
+        margin: 10px 0;
+        width: 0; } }
     .home-container .search-bar input {
       background-color: transparent;
       border: none;
@@ -349,6 +766,9 @@ body {
         outline: none;
         color: #fff;
         background-color: rgba(41, 32, 16, 0.8); }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .home-container .btn-contribute button {
+        width: 90%; } }
   .home-container .btn-contribute:focus, .home-container .btn-contribute:active {
     outline: none;
     color: #fff;
@@ -394,8 +814,7 @@ body {
   border-radius: 0;
   /*    margin-top: 50px; */
   width: 100%;
-  min-height: 1000px;
-  min-height: 678px;
+  min-height: 110vh;
   background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(2, 2, 2, 0.5)), url(/static/images/register-bg.jpg);
   background-position: center;
   background-size: cover; }
@@ -501,8 +920,7 @@ body {
   border-radius: 0;
   /*    margin-top: 50px; */
   width: 100%;
-  min-height: 1000px;
-  min-height: 678px;
+  min-height: 100vh;
   background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(2, 2, 2, 0.5)), url(/static/images/profile-bg.jpg);
   background-position: center;
   background-size: cover; }
@@ -510,7 +928,7 @@ body {
 .my-material-container {
   background-color: rgba(41, 32, 16, 0.5);
   margin: 20px auto;
-  height: 637px;
+  height: 612px;
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.4); }
   .my-material-container .search-bar {
@@ -758,7 +1176,7 @@ body {
 .user-details {
   background-color: rgba(41, 32, 16, 0.8);
   width: 100%;
-  height: 636px;
+  height: 612px;
   margin: 20px 0px 0 -10px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   padding: 15px;
@@ -789,6 +1207,14 @@ body {
 .row {
   margin: 0; }
 
+.nav-tabs {
+  border: none; }
+
+.navbar-default .navbar-brand {
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  font-family: "Montserrat-Regular";
+  letter-spacing: 5px; }
 .navbar-default .navbar-nav .open a {
   color: #fff;
   background-color: transparent; }
@@ -798,32 +1224,5 @@ body {
 .navbar-default .navbar-nav li .dropdown-menu {
   background-color: rgba(41, 32, 16, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.5); }
-
-.verify-bg {
-  border: none;
-  border-radius: 0;
-  /*    margin-top: 50px; */
-  width: 100%;
-  min-height: 1000px;
-  min-height: 678px;
-  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(2, 2, 2, 0.5)), url(/static/images/verify-bg.jpg);
-  background-position: center;
-  background-size: cover; }
-  .verify-bg div {
-    margin-top: 300px;
-    background-color: rgba(41, 32, 16, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    height: 150px;
-    padding: 20px; }
-    .verify-bg div h1 {
-      text-align: center;
-      color: #fff;
-      font-family: "Montserrat-Regular";
-      letter-spacing: 3px; }
-    .verify-bg div h5 {
-      text-align: center;
-      color: #fff;
-      font-family: "Montserrat-Regular";
-      letter-spacing: 3px; }
 
 /*# sourceMappingURL=styles.css.map */

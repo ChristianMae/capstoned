@@ -31,7 +31,6 @@ class AddLearningView(LoginRequiredMixin, TemplateView, ExtractMixin, DetectLang
 
 
     def post(self, request, *args, **kwargs):
-        import pdb; pdb.set_trace();
         form = LearningMaterialsForm(self.request.POST, self.request.FILES)
      
 
@@ -208,8 +207,8 @@ class EditLearningMaterialView(LoginRequiredMixin, TemplateView, ExtractMixin, T
     def post(self, *args, **kwargs):
         learning = LearningMaterials.objects.get(id=kwargs.get('id'))
         contribution_instance = self.request.POST['contribution']
-        filename = '{}_translated.pdf'.format(learning.title) 
-        file_path ='media_cdn/generated/{}'.format(filename)
+        filename = '{}_translated.pdf'.format(learning.translated_title) 
+        file_path ='media/generated/{}'.format(filename)
        
         # text = contribution_instance.encode('utf-8')
         
@@ -246,6 +245,7 @@ class resutlView(LoginRequiredMixin, TemplateView):
     template_name = 'portal/result.html'
     login_url = '/login/'
 
+
     def get(self, request, *args, **kwargs):
         learning_table = LearningMaterials.objects.get(id=kwargs.get('id'), is_translated=True)
         return render(self.request, self.template_name, {'learning_table': learning_table, 'tags': learning_table.tags.split(',')})
@@ -253,23 +253,20 @@ class resutlView(LoginRequiredMixin, TemplateView):
 
 class indexView(TemplateView):
     template_name = 'portal/index.html'
+    materials = LearningMaterials.objects.filter(is_translated=True).order_by('-date_uploaded')
+
 
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
-            materials = LearningMaterials.objects.filter(is_translated=True).order_by('-date_uploaded')
-            
             page = self.request.GET.get('page')
-            paginator = Paginator(materials, 6)
-            
+            paginator = Paginator(self.materials, 6)
             try:
                 items = paginator.page(page)
             except PageNotAnInteger:
                 items = paginator.page(1)
             except EmptyPage:
                 items = paginator.page(paginator.num_pages)
-
-
-            return render(self.request, self.template_name,{'items': items})
+            return render(self.request, self.template_name,{'items': items,})
         else:
             form = LoginForm()
             return render(self.request, self.template_name, {'form':form})
@@ -277,15 +274,32 @@ class indexView(TemplateView):
 
     def post(self, *args, **kwargs):
         form = LoginForm(self.request.POST)
+        materials = LearningMaterials.objects.filter(is_translated=True).order_by('-date_uploaded')
         if self.request.user.is_authenticated:
             search_input = self.request.POST['search_input']
-            search_result = LearningMaterials.objects.filter(title__contains=search_input,is_translated=True)
-            return render(self.request, self.template_name, {'materials': search_result})
+            search_result = LearningMaterials.objects.filter(original_title__contains=search_input,is_translated=True)
+            page = self.request.GET.get('page')
+            paginator = Paginator(search_result, 6)
+            try:
+                items = paginator.page(page)
+            except PageNotAnInteger:
+                items = paginator.page(1)
+            except EmptyPage:
+                items = paginator.page(paginator.num_pages)
+            return render(self.request, self.template_name, {'items': items,})
         else:
-            if form.is_valid():
+            if form.is_valid(): 
+                page = self.request.GET.get('page')
+                paginator = Paginator(self.materials, 6)   
+                try:
+                    items = paginator.page(page)
+                except PageNotAnInteger:
+                    items = paginator.page(1)
+                except EmptyPage:
+                    items = paginator.page(paginator.num_pages)
                 login(self.request,form.user_cache)
-            # return HttpResponseRedirect(reverse('index'))
-            return render(self.request, self.template_name, {'form':form})
+            return render(self.request, self.template_name, {'form':form, 'items': items})
+
 
 class profileView(TemplateView, LoginRequiredMixin):
     template_name = 'account/profile.html'

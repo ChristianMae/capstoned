@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+
+{% block title %}ATRAX Terms|Conditions{% endblock %}
+
+{% block content %}
+<div class="terms-bg">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="tab-content">
+            <div id="eula" class="tab-pane fade in active">
+                <div class="terms-container">
+                    <ul class="nav nav-tabs">
+                        <li class="btn-privacy">
+                            <a data-toggle="tab" href="#privacy">Privacy</a>
+                        </li>
+                         <li class="btn-eula">
+                            <a data-toggle="tab" href="#eula">Eula</a>
+                        </li>
+                    </ul>
+                    <h2 class="eula-title">End-User License Agreement (EULA) for ATRAX Web Portal</h2>
+                    <h5 class="date-modified">This version is current as of February 2, 2018</h5>
+                    <h4 class="phrase-one">Please read this End-User License Agreement (“EULA”) carefully before registering and logging into your new account. DO NOT register, use the portal and make an account if you do not agree to the terms of this agreement.</h4>
+                    <h3 class="phrase-two">BY USING ATRAX WEB PORTAL AND CLICKING THE “I AGREE” CHECKBOX, YOU AGREE TO BE BOUND BY THE TERMS AND CONDITIONS OF THIS AGREEMENT AS WELL AS THE TERMS OF 
+                        <a data-toggle="tab"  href="#privacy"">
+                            <strong>ATRAX’ PRIVACY POLICY.</strong>
+                        </a>
+                    </h3>
+                    <h4 class="phrase ">
+                        <strong>1. Introduction.</strong>&nbsp;This End User License Agreement (“EULA”) is a legal agreement between a) you, the user and b) ATRAX, that governs your use of the web portal, its services and the provided materials contained therein.
+                    </h4>
+                    <h4 class="phrase">
+                        <strong>2. License.</strong>&nbsp;ATRAX grants you a revocable, non-exclusive, non-transferable, license to use the web application and use and download its materials solely for personal, educational, non-commercial purposes in accordance with the terms of this agreement, as well as the provisions of
+                        <strong>R.A. No. 8293 (Intellectual Property Code of the Philippines)</strong> and 
+                        <strong>R.A. No. 10175 (Cybercrime Prevention Act of 2012).</strong>
+                    </h4>
+                    <h4 class="phrase">
+                        <strong>3. Restrictions.</strong>&nbsp;You agree not to, and will not permit others to:
+                    </h4>
+                    <h4 class="letters">
+                        <strong>a.) </strong>&nbsp;Sell, rent, lease or commercially exploit the services and materials of the Web Portal in any way.
+                        <h6 class="sub-letters">In the case of internal agreements and contracts between authors or owners of a material, ATRAX will not be liable in any legal or contractual shortcomings, infringements and breaches committed by any of these parties.
+                        </h6>
+                    </h4>
+                    <h4 class="letters">
+                        <strong>b.) </strong>&nbsp;Use the Web Portal, its services and its materials for malicious or unlawful activities and purposes. 
+                        <h6 class="sub-letters">What constitutes a malicious or unlawful activity/ purpose will be determined at our sole discretion.
+                        </h6>
+                    </h4>
+                    <h4 class="letters">
+                        <strong>c.) </strong>&nbsp;Infringe intellectual property rights. 
+                        <h6 class="sub-letters">ATRAX is not liable for user’s posts, uploaded materials, its content and where, when and how it was taken.
+                        </h6>
+                    </h4>
+                    <h4 class="letters">
+                        <strong>d.) </strong>&nbsp;Transfer your account, share your password or any other activity that could jeopardize your account and/or your Personal Information.
+                    </h4>
+                    <h4 class="phrase">
+                        <strong>4. Modification of Web Portal.</strong>&nbsp;ATRAX reserves the right to modify, suspend or discontinue, temporarily or permanently, the Web Portal or any service to which it connects, with or without notice and without liability to you.
+                    </h4>
+                    <h4 class="phrase">
+                        <strong>5. Term and Termination.</strong>&nbsp;This Agreement shall remain in effect until terminated by you or ATRAX. 
+                        <p class="description">
+                            ATRAX may, in its sole discretion, at any time and for any or no reason, suspend or terminate this Agreement with or without prior notice.
+                        </p>
+                        <p class="description">
+                            This Agreement will terminate immediately, without prior notice from ATRAX, in the event that you fail to comply with any provision of this Agreement. You may also terminate this Agreement by deleting your account. 
+                        </p>
+                        <p class="description">
+                            ATRAX also reserves the right to drop, discontinue, delete, or suspend materials temporarily or permanently and/or account if any of the restrictions and provisions of this Agreement are found to be breached.
+                        </p>
+                    </h4>
+                    <h4 class="phrase">
+                        <strong>6. Severability.</strong>&nbsp;If any provision of this Agreement is held to be unenforceable or invalid, such provision will be changed or interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect. 
+                    </h4>
+                    <h4 class="phrase">
+                        <strong>7. Amendments to this Agreement.</strong>&nbsp;ATRAX reserves the right, at its sole discretion, to modify or replace this Agreement at any time. If a revision is material, we will provide at least 30 days’ notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion. 
+                    </h4>
+                    <h4 class="phrase">
+                        <strong>8. Contact Information.</strong>&nbsp;If you have any questions about this Agreement, please contact us through email at <strong>atraxwebportal@gmail.com.</strong>
+                    </h4>
+                    <h4 class="terms-button">
+                        <div class="btn-group">
+                            <a href="{% url 'register' %}">
+                                <button>I Agree</button>
+                            </a>
+                            <a href="{% url 'index' %}">
+                                <button>I Disagree</button>
+                            </a>
+                        </div>
+                    </h4>
+                </div>
+            </div>
+            <div id="privacy" class="tab-pane fade">
+                <div class="terms-container">
+                    <ul class="nav nav-tabs">
+                        <li class="btn-privacy">
+                            <a data-toggle="tab" href="#privacy">Privacy</a>
+                        </li>
+                         <li class="btn-eula">
+                            <a data-toggle="tab" href="#eula">Eula</a>
+                        </li>
+                    </ul>
+                    <h2 class="eula-title">ATRAX’ Privacy Policy</h2>
+                    <h5 class="date-modified">This version is current as of February 2, 2018</h5>
+                    <h4 class="phrase-one">We operate <strong>http://www.atrax.uic.edu.ph</strong>. This page informs you of our policies in the collection, use and disclosure of Personal Information we receive from users of our Web Portal.</h4>
+                    <h3 class="phrase-two">We use your Personal Information only for providing and improving ATRAX (the “Site” and “Web Portal”) as is within the bounds of <strong>R.A. No. 10173 (Data Privacy Act of 2012)</strong>. By using the Web Portal, its materials and its services, you agree to the collection and use of information in accordance with this policy.
+                    </h3>
+                    <h4 class="phrase">
+                        <strong>1. Information Collection and Use.</strong>&nbsp;While using our Web Portal, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to your name, address, and email address (“Personal Information”). 
+                    </h4>
+                    <h4 class="phrase">
+                        <strong>2. Log Data.</strong>&nbsp;Like many site operators, we collect information that your browser sends whenever you visit our Web Portal (“Log Data”).
+                        <br/>
+                        <br/>
+                        This Log Data may include information such as your computer’s Internet Protocol (“IP”) address, browser type, browser version and the pages of our Site that you visit, the time and date of your visit, the time spent on those pages and other statistics.
+                        <br/>
+                        <br/>
+                        In addition, we may use third party services such as Google Analytics that collect, monitor and analyze these data.
+
+                    </h4>
+                    <h4 class="phrase">
+                        <strong>3. Communications.</strong>&nbsp;We may use your Personal Information to contact you with information that enables you to track the materials that you and other users have submitted to the Web Portal, as well as notifications and warnings in matters connected to your materials, your user account and important information that could affect the Site’s reliability and efficiency.
+                        <br/>
+                        <br/>
+                        If we make any material changes to the Web Portal and its services, we will notify you either through the email address you have provided us, or by placing a prominent notice on our website. What constitutes a material change will be determined at our sole discretion. 
+                        <br/>
+                        <br/>
+                        Your contact information (such as your email address) can also be viewed by different ATRAX users for communication purposes.
+                    </h4>
+                    <h4 class="phrase">
+                        <strong>4. Security.</strong>&nbsp;The security of your Personal Information is important to us, but remember that no method of transmission over the Internet, or method of electronic storage, is 100% secure. While we strive to use acceptable means to protect your Personal Information, we cannot guarantee its absolute security.
+                    </h4>
+                    <h4 class="phrase">
+                        <strong>5. Changes To This Privacy Policy.</strong>&nbsp;This Privacy Policy is effective as of September 5, 2017 and will remain in effect except with respect to any changes in its provisions in the future which will be in effect immediately after being posted on this page.
+
+                        We reserve the right to update or change our Privacy Policy at any time and you should check this Privacy Policy periodically. Your continued use of the Web Portal, its materials and its services after we post any modifications to the Privacy Policy on this page will constitute your acknowledgement of the modifications and your consent to abide and be bound by the modified Privacy Policy.
+                        <br/>
+                        <br/>
+                        If we make any material changes to this Privacy Policy, we will notify you either through the email address you have provided us, or by placing a prominent notice on our website. What constitutes a material change will be determined at our sole discretion.
+                    </h4>
+                    <h4 class="phrase">
+                        <strong>6. Contact Us.</strong>&nbsp;If you have any questions about this Privacy Policy, please contact us through email at atraxWebPortal@gmail.com. 
+                    </h4>
+                    <h4 class="terms-button">
+                        <div class="btn-group">
+                            <a href="{% url 'register' %}">
+                                <button>I Agree</button>
+                            </a>
+                            <a href="{% url 'index' %}">
+                                <button>I Disagree</button>
+                            </a>
+                        </div>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+  function contribute(all_id){
+    var panelcollapse = document.getElementById("contribute-body"+all_id);
+    var plus = document.getElementById("contribute_icon"+all_id);
+    if (panelcollapse.getAttribute("class") == "panel-collapse collapse") {
+      plus.setAttribute("class", "glyphicon glyphicon-chevron-up");
+  }
+  else {
+      plus.setAttribute("class", "glyphicon glyphicon-chevron-down");
+  }
+}
+</script>
+{% endblock %}
