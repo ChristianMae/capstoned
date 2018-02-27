@@ -61,7 +61,7 @@
                 <div class="row">
                     {% for material in items%}
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="material-cover">Title : <strong>{{ material.title }}</strong></div>
+                        <div class="material-cover">Title : <strong>{{ material.original_title }}</strong></div>
                         <div class="details-container"> 
                             <a class="btn-view" href="{% url 'contribution' material.id %}">
                                 <button>View</button>

@@ -6,6 +6,7 @@ from django.db import IntegrityError
 from portal.forms import LearningMaterialsForm
 from django.views.generic import TemplateView
 from portal.mixin import ExtractMixin, DetectLanguageMixin, TranslationMixin
+from portal.pageMixin import PaginatorGenerator
 from portal.models import LearningMaterials
 from django.contrib.auth.mixins import LoginRequiredMixin
 from reportlab.lib.pagesizes import letter, A4
@@ -238,7 +239,6 @@ class EditLearningMaterialView(LoginRequiredMixin, TemplateView, ExtractMixin, T
         learning.save()
         
         return redirect('contribution', learning.id)
-  
 
 
 class resutlView(LoginRequiredMixin, TemplateView):
@@ -251,21 +251,14 @@ class resutlView(LoginRequiredMixin, TemplateView):
         return render(self.request, self.template_name, {'learning_table': learning_table, 'tags': learning_table.tags.split(',')})
 
 
-class indexView(TemplateView):
+class indexView(TemplateView, PaginatorGenerator):
     template_name = 'portal/index.html'
     materials = LearningMaterials.objects.filter(is_translated=True).order_by('-date_uploaded')
 
 
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
-            page = self.request.GET.get('page')
-            paginator = Paginator(self.materials, 6)
-            try:
-                items = paginator.page(page)
-            except PageNotAnInteger:
-                items = paginator.page(1)
-            except EmptyPage:
-                items = paginator.page(paginator.num_pages)
+            items =  self.page(self.materials)
             return render(self.request, self.template_name,{'items': items,})
         else:
             form = LoginForm()
@@ -278,27 +271,14 @@ class indexView(TemplateView):
         if self.request.user.is_authenticated:
             search_input = self.request.POST['search_input']
             search_result = LearningMaterials.objects.filter(original_title__contains=search_input,is_translated=True)
-            page = self.request.GET.get('page')
-            paginator = Paginator(search_result, 6)
-            try:
-                items = paginator.page(page)
-            except PageNotAnInteger:
-                items = paginator.page(1)
-            except EmptyPage:
-                items = paginator.page(paginator.num_pages)
+            items = self.page(search_result)
             return render(self.request, self.template_name, {'items': items,})
         else:
             if form.is_valid(): 
-                page = self.request.GET.get('page')
-                paginator = Paginator(self.materials, 6)   
-                try:
-                    items = paginator.page(page)
-                except PageNotAnInteger:
-                    items = paginator.page(1)
-                except EmptyPage:
-                    items = paginator.page(paginator.num_pages)
+                items = self.page(self.materials)
                 login(self.request,form.user_cache)
-            return render(self.request, self.template_name, {'form':form, 'items': items})
+                return render(self.request, self.template_name, {'form':form, 'items': items})
+            return render(self.request, self.template_name, {'error_messages':'Email or Password doesn\'t match.'})
 
 
 class profileView(TemplateView, LoginRequiredMixin):
@@ -318,7 +298,6 @@ class profileView(TemplateView, LoginRequiredMixin):
             items = paginator.page(1)
         except EmptyPage:
             items = paginator.page(paginator.num_pages)
-
         return render(self.request, self.template_name,{'materials': materials, 'user':user, 'items': items})
 
 
@@ -326,5 +305,5 @@ class profileView(TemplateView, LoginRequiredMixin):
         if self.request.user.is_authenticated:
             search_input = self.request.POST['search_input']
             user = User.objects.get(id=self.request.user.id)
-            search_result = LearningMaterials.objects.filter(title__contains=search_input,is_translated=True)
+            search_result = LearningMaterials.objects.filter(original_title__contains=search_input,is_translated=True)
             return render(self.request, self.template_name, {'materials': search_result, 'user':user})

@@ -80,8 +80,12 @@ class DetectLanguageMixin(object):
 
     def detect_lang(self, content):
         try: 
-            source_lang = self.translator.detect(content)
-            return source_lang.lang
+            extracted_content = [] 
+            content_count = len(content)
+            min = 200
+            for min in range(content_count):
+                source_lang = self.translator.detect(content[1:min])
+                return source_lang.lang
         except ConnectionError as e:
             return 'ConnectionError'
 
@@ -96,12 +100,13 @@ class TranslationMixin(object):
             translation = []
             if content_count >= 5000:
                 start = 0
-                end = 4000
+                end = 700
                 for end in range(content_count):
                     translated = self.translator.translate(content[start:end],dest='ceb')
+
                     translation.append(translated.text)
-                    start += end
-                    end += 4000
+                    start += end    
+                    end += 700
                 translated_content = ' '.join(translation)
                 return translated_content
             elif content_count == 0:
